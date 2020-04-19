@@ -32,7 +32,7 @@ class ButtonGroup(crispy_forms_layout.LayoutObject):
 
     def __init__(self, *fields, **kwargs):
         self.fields = list(fields)
-        self.css_class = kwargs.get('css_class', 'uk-margin-medium')
+        self.css_class = kwargs.get('css_class', None)
         self.css_id = kwargs.get('css_id', None)
         self.template = kwargs.get('template', self.template)
 
@@ -40,7 +40,7 @@ class ButtonGroup(crispy_forms_layout.LayoutObject):
         field_list = []
         template = self.get_template_name(template_pack)
 
-        for field in self.fields:
+        for i, field in enumerate(self.fields):
             field_list.append(
                 render_field(field, form, form_style, context,
                              template_pack=template_pack)

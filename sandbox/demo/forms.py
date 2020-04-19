@@ -24,7 +24,7 @@ class BaseForm(forms.Form):
                                  widget=forms.TextInput(attrs={'required':''}),
                                  required=True,
                                  help_text="This is a sample field help text.")
-    column_input_1 = forms.CharField(label=_('Column input 1dewewdewd'), required=False)
+    column_input_1 = forms.CharField(label=_('Column input 1'), required=False)
     column_input_2 = forms.CharField(label=_('Column input 2'), required=True)
     column_input_3 = forms.CharField(label=_('Column input 3'), required=False)
     textarea_input = forms.CharField(label=_('Textarea'), widget=forms.Textarea(attrs={'rows':5, 'required':''}), required=True)
@@ -70,12 +70,12 @@ class FormByFieldsetsForm(FormCrispyHelperMixin, BaseForm):
     def __init__(self, *args, **kwargs):
         super(FormByFieldsetsForm, self).__init__(*args, **kwargs)
 
-        self.helper.attrs = {}  # 'data_abide': '', 'novalidate': ''
+        self.helper.attrs = {'novalidate': ""}
         self.helper.form_action = '.'  # todo: check this
 
-        part1 = [_('Part 1')]+part_1_crispies(pack=self.helper.template_pack)
+        part1 = [_('Part 1')] + part_1_crispies(pack=self.helper.template_pack)
         # part2 = [_('Part 2')]+part_2_crispies(pack=self.helper.template_pack)
-        part3 = [_('Part 3')]+part_3_crispies(pack=self.helper.template_pack)
+        part3 = [_('Part 3')] + part_3_crispies(pack=self.helper.template_pack)
         # part4 = [_('Part 4')]+part_4_crispies(pack=self.helper.template_pack)
 
         self.helper.layout = Layout(

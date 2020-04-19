@@ -35,7 +35,7 @@ class FormContainersMixin:
         """
         kwargs = super(FormContainersMixin, self).get_form_kwargs()
         kwargs.update({
-            'pack': "uikit-{}".format(self.kwargs.get('uikit_version', '3.4.0'))
+            'pack': f"uikit-{self.kwargs.get('uikit_version', '3.4.0')}"
         })
         return kwargs
 

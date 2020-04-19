@@ -1,18 +1,18 @@
 {% extends "skeleton.html" %}
 {% load i18n crispy_forms_tags %}
 
-{% block base_content %}<div class="row">
+{% block base_content %}
     <div class="uk-container">
         <div uk-grid>
             <div class="uk-width-1-1" >
                 <a href="{% url 'home' %}" class="uk-icon-link" uk-icon="arrow-left">Index</a>
             </div>
             <div class="uk-width-1-1" >
-            <h2 class="uk-margin-small">Crispy forms Uikit {{ uikit_version }} sample</h2>
-            {% with packages_versions=view.get_versions %}
-                <span class="uk-label">django-crispy-forms=={{ packages_versions.django_crispy_forms }}</span>
-                <span class="uk-label">crispy-forms-uikit=={{ packages_versions.crispy_forms_uikit }}</span>
-            {% endwith %}
+                <h2 class="uk-margin-small">Crispy forms Uikit {{ uikit_version }} sample</h2>
+                {% with packages_versions=view.get_versions %}
+                    <span class="uk-label">django-crispy-forms {{ packages_versions.django_crispy_forms }}</span>
+                    <span class="uk-label">crispy-forms-uikit {{ packages_versions.crispy_forms_uikit }}</span>
+                {% endwith %}
             </div>
         </div>
 
@@ -31,45 +31,12 @@
 
     <hr/>
 
-    <form class="uk-grid-small" uk-grid>
-        <input type="hidden" name="csrfmiddlewaretoken" value="VpLeuddN3lQxbrCdVN0q09leWGz60BMfksSKEh33w1Djibucd5lDEd5yaq30wA3x">
-        <div class="uk-width-1-1">
-            <label for="form-stacked-field">
-                Column input 1
-            </label>
-            <input class="uk-input" type="text" placeholder="100">
-        </div>
-        <div class="uk-width-1-2@s">
-            <label for="form-stacked-field">
-                Column input a
-            </label>
-            <input class="uk-input" type="text" placeholder="50">
-        </div>
-        <div class="uk-width-1-4@s">
-            <label for="form-stacked-field">
-                Column input b
-            </label>
-            <input class="uk-input" type="text" placeholder="2yuytf5">
-        </div>
-        <div class="uk-width-1-4@s">
-            <label for="form-stacked-field">
-                Column input c
-            </label>
-            <input class="uk-input" type="text" placeholder="25">
-        </div>
-        <div class="uk-width-1-2@s">
-            <input class="uk-input" type="text" placeholder="50">
-        </div>
-        <div class="uk-width-1-2@s">
-            <input class="uk-input" type="text" placeholder="50">
-        </div>
-        <div class=" uk-margin uk-width-1-1" type="column">
-            <p class=" uk-align-right">
+        <div class="uk-margin uk-width-1-1" type="column">
+            <p class="uk-align-right">
                 <button class="uk-button submit button success" id="submit-id-submit">Hello</button>
                 <button class="uk-button reset" id="reset-id-cancel">There</button>
 {#                <input type="button" name="dummy" value="Delete" class="uk-input button alert" id="button-id-dummy">#}
             </p>
         </div>
-    </form>
 
-</div>{% endblock %}
+{% endblock %}

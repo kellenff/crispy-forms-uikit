@@ -10,7 +10,7 @@
 
 {% for field in form %}
     <!-- Field {{ field }} -->
-    {% include field_template | default:"uikit-3.4.0/field.html" %}
+    {% include field_template|default:"uikit-3.4.0/field.html" %}
 {% endfor %}
 
 {% if form_style == "" or form_style %}
