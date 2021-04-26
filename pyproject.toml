@@ -6,7 +6,7 @@ authors = ["Jan Willems <jw@elevenbts.com>"]
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7"
 Django = ">=2.1"
 django-crispy-forms = "^1.9.0"
 
